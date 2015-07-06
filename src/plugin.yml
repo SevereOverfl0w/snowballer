@@ -1,0 +1,4 @@
+name: snowballer
+main: snowballer.BukkurePlugin
+version: 0.1.0
+depend: [bukkure]
