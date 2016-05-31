@@ -12,7 +12,8 @@
   (let [player (.getPlayer ev)
         in-hand (.. player getInventory getItemInHand getType)
         action (.getAction ev)]
-    (if (and (= in-hand org.bukkit.Material/STICK) (= action org.bukkit.event.block.Action/RIGHT_CLICK_AIR))
+    (when (and (= in-hand org.bukkit.Material/STICK)
+               (= action org.bukkit.event.block.Action/RIGHT_CLICK_AIR))
       (.launchProjectile player org.bukkit.entity.Snowball))))
 
 (defn events []
