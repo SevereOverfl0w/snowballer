@@ -1,7 +1,7 @@
- (ns snowballer.core
-   (:require [bukkure.logging :as log]
-             [bukkure.config :as cfg]
-             [bukkure.events :as ev]))
+(ns snowballer.core
+  (:require [bukkure.logging :as log]
+            [bukkure.config :as cfg]
+            [bukkure.events :as ev]))
 
 (defonce plugin (atom nil))
 
@@ -21,7 +21,7 @@
    (ev/event "player.player-interact" #'fireprojectile)])
 
 (defn on-enable [plugin-instance]
-  (log/info "Starting your new bukkure plugin!")
+  (log/info "Starting snowballer")
   (reset! plugin plugin-instance)
   (ev/register-eventlist @plugin (events)))
 
